@@ -7,7 +7,7 @@ import {
 export default defineEventHandler(async (event) => {
   const { page = '0' } = getQuery<{ page: string }>(event);
 
-  const LIMIT = 3;
+  const LIMIT = 40;
 
   const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
     publicKey: 'ada58ca1bcd6b5d856ef',
