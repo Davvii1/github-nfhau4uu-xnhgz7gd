@@ -5,9 +5,12 @@ import {
 } from '@uploadcare/rest-client';
 
 export default defineEventHandler(async (event) => {
-  const { page = '0' } = getQuery<{ page: string }>(event);
+  const { page = '0', limit = '40' } = getQuery<{
+    page: string;
+    limit: string;
+  }>(event);
 
-  const LIMIT = 40;
+  const LIMIT = parseInt(limit);
 
   const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
     publicKey: 'ada58ca1bcd6b5d856ef',
@@ -36,6 +39,6 @@ export default defineEventHandler(async (event) => {
     prev: paginator.hasPrevPage(),
     total: currentPage.total,
     perPage: currentPage.perPage,
-    results: currentPage.results.map((file) => file.url),
+    results: currentPage.results.map((file) => file.originalFileUrl),
   };
 });
