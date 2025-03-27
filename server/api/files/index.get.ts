@@ -13,8 +13,8 @@ export default defineEventHandler(async (event) => {
   const LIMIT = parseInt(limit);
 
   const uploadcareSimpleAuthSchema = new UploadcareSimpleAuthSchema({
-    publicKey: 'ada58ca1bcd6b5d856ef',
-    secretKey: 'c10e2d4a05c847b7483f',
+    publicKey: 'a0d86b82269d9922c222',
+    secretKey: 'acadc01c98a7bc3d3217',
   });
 
   const paginator = new Paginator(
